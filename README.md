@@ -2,7 +2,7 @@
 
 ## English
 
-[LCNHNetworkBehaviour&lt;T&gt;]: API/LCNHNetworkBehaviour`1.cs
+[LCNHNetworkBehaviour&lt;T&gt;]: https://github.com/Rumi727/Rumis-Lethal-Network-Handler/blob/main/API/LCNHNetworkBehaviour%601.cs
 [Wiki]: https://lethal.wiki/dev/advanced/networking#creating-the-networkhandler
 [LCNHPlugin]: LCNHPlugin.cs
 
