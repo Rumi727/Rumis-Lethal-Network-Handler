@@ -19,7 +19,7 @@ Even creating objects!
 This mod only automatically handles the [Creating the NetworkHandler][wiki] part,\
 so you have to do the rest yourself.
 
-However, ![alt text](image.png) the ``NetcodePatcher`` method in this part is in the [LCNHPlugin] class.\
+However, ![alt text](https://github.com/Rumi727/Rumis-Lethal-Network-Handler/raw/main/image.png) the ``NetcodePatcher`` method in this part is in the [LCNHPlugin] class.\
 If you don't want to bother creating a method, use the method in that plugin.
 
 ### Note
@@ -51,7 +51,7 @@ I actually made this for my own use.
 [Creating the NetworkHandler][wiki] 부분 만 자동으로 처리해주는 모드이기 때문에\
 나머지는 직접 하셔야합니다
 
-다만 ![alt text](image.png) 이 부분의 ``NetcodePatcher`` 메소드는 [LCNHPlugin] 클래스에 있습니다\
+다만 ![alt text](https://github.com/Rumi727/Rumis-Lethal-Network-Handler/raw/main/image.png) 이 부분의 ``NetcodePatcher`` 메소드는 [LCNHPlugin] 클래스에 있습니다\
 메소드를 만드는게 귀찮다면 이 모드의 메소드를 사용하세요
 
 ### 참고 사항
