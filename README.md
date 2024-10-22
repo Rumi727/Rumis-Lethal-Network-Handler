@@ -4,7 +4,7 @@
 
 [LCNHNetworkBehaviour&lt;T&gt;]: https://github.com/Rumi727/Rumis-Lethal-Network-Handler/blob/main/API/LCNHNetworkBehaviour%601.cs
 [Wiki]: https://lethal.wiki/dev/advanced/networking#creating-the-networkhandler
-[LCNHPlugin]: LCNHPlugin.cs
+[LCNHPlugin]: https://github.com/Rumi727/Rumis-Lethal-Network-Handler/blob/main/LCNHPlugin.cs
 
 [Modding Wiki's Network section][Wiki] When creating a singleton network handler, did you find it annoying to use prefabs, patch lethal, and create objects?
 
