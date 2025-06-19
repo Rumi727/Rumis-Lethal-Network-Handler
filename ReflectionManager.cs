@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using Rumi.LCNetworks.API;
 
@@ -11,44 +12,41 @@ namespace Rumi.LCNetworks
         {
             assemblys = AppDomain.CurrentDomain.GetAssemblies();
 
+            types = assemblys.SelectMany(x =>
             {
-                List<Type> result = new List<Type>();
-                for (int assemblysIndex = 0; assemblysIndex < assemblys.Count; assemblysIndex++)
+                try
                 {
-                    Type[] types = assemblys[assemblysIndex].GetTypes();
-                    for (int typesIndex = 0; typesIndex < types.Length; typesIndex++)
-                    {
-                        Type type = types[typesIndex];
-                        result.Add(type);
-                    }
+                    return x.GetTypes();
                 }
+                catch (ReflectionTypeLoadException e)
+                {
+                    return e.Types.Where(x => x != null).ToArray();
+                }
+            }).ToArray();
 
-                types = result.ToArray();
-            }
-
+            networks = types.Where(static x =>
             {
-                List<Type> result = new List<Type>();
-                for (int i = 0; i < types.Count; i++)
+                try
                 {
-                    Type type = types[i];
-                    if (!type.IsAbstract && typeof(LCNHNetworkBehaviour).IsAssignableFrom(type))
-                        result.Add(type);
+                    return !x.IsAbstract && typeof(LCNHNetworkBehaviour).IsAssignableFrom(x);
                 }
-
-                networks = result.ToArray();
-            }
+                catch
+                {
+                    return false;
+                }
+            }).ToArray();
         }
 
         /// <summary>
         /// All loaded assemblys
         /// </summary>
-        public static IReadOnlyList<Assembly> assemblys { get; }
+        public static IReadOnlyList<Assembly> assemblys { get; } = Array.Empty<Assembly>();
 
         /// <summary>
         /// All loaded types
         /// </summary>
-        public static IReadOnlyList<Type> types { get; }
+        public static IReadOnlyList<Type> types { get; } = Array.Empty<Type>();
 
-        public static IReadOnlyList<Type> networks { get; }
+        public static IReadOnlyList<Type> networks { get; } = Array.Empty<Type>();
     }
 }
